@@ -1,10 +1,10 @@
-defmodule AmazonProductAdvertisingClient.ItemLookup do
+defmodule Amad.ItemLookup do
   @moduledoc """
   The [ItemLookup](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemLookup.html) operation
   """
 
   alias __MODULE__
-  alias AmazonProductAdvertisingClient.Config
+  alias Amad.Config
 
   defstruct "Condition": "New",
     "IdType": "ASIN",
@@ -19,10 +19,11 @@ defmodule AmazonProductAdvertisingClient.ItemLookup do
     "TruncateReviewsAt": nil,
     "VariationPage": nil
 
+
   @doc """
   Execute an ItemLookup operation
   """
   def execute(search_params \\ %ItemLookup{}, config \\ %Config{}) do
-    AmazonProductAdvertisingClient.call_api search_params, config
+    Amad.call_api search_params, config
   end
 end

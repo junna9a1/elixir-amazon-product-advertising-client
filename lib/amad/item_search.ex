@@ -1,13 +1,13 @@
-defmodule AmazonProductAdvertisingClient.ItemSearch do
+defmodule Amad.ItemSearch do
   @moduledoc """
   The [ItemSearch](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemSearch.html) operation
 
   """
 
   alias __MODULE__
-  alias AmazonProductAdvertisingClient.Config
+  alias Amad.Config
 
-  defstruct "Availability": "Available",
+  defstruct "Availability": nil,
       "BrowseNode": nil,
       "BrowseNodeId": nil,
       "Condition": "New",
@@ -22,10 +22,11 @@ defmodule AmazonProductAdvertisingClient.ItemSearch do
       "Title": nil,
       "MerchantId": "Amazon"
 
+
   @doc """
   Execute an ItemSearch operation
   """
   def execute(search_params \\ %ItemSearch{}, config \\ %Config{}) do
-    AmazonProductAdvertisingClient.call_api search_params, config
+    Amad.call_api search_params, config
   end
 end
